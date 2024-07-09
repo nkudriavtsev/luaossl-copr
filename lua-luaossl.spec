@@ -9,15 +9,13 @@
 %global luapkgname luaossl
 
 Name:           lua-%{luapkgname}
-Version:        20200709
-Release:        6%{?dist}
+Version:        20220711
+Release:        1%{?dist}
 Summary:        Most comprehensive OpenSSL module in the Lua universe
 
 License:        MIT
 URL:            https://github.com/wahern/%{luapkgname}
 Source0:        https://github.com/wahern/%{luapkgname}/archive/rel-%{version}/%{name}-%{version}.tar.gz
-
-Patch1:         openssl-3-compat.patch
 
 BuildRequires:  gcc
 BuildRequires:  make
@@ -97,6 +95,10 @@ make DESTDIR=%{buildroot} prefix=%{_prefix} libdir=%{_libdir} install%{luacompat
 %{_pkgdocdir}
 
 %changelog
+* Tue Jul 09 2024 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 20220711-1
+- Update to 20220711
+- Drop OpenSSl 3.0.0 patch included upstream
+
 * Thu Jan 25 2024 Fedora Release Engineering <releng@fedoraproject.org> - 20200709-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
