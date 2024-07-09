@@ -57,8 +57,6 @@ for the Lua Programming Language
 %prep
 %setup -q -n %{luapkgname}-rel-%{version}
 
-%patch1 -p1
-
 %build
 export CFLAGS="%{?optflags} -fPIC"
 export LDFLAGS="%{?build_ldflags}"
